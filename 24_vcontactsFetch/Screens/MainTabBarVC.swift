@@ -48,7 +48,6 @@ class MainTabBarVC: UITabBarController {
       let   photosVC = storyboard?.instantiateViewController(withIdentifier: "PhotosVC") as! PhotosVC
        let  groupsVC = storyboard?.instantiateViewController(withIdentifier: "GroupsVC") as! GroupsVC
         
-       // setupTabBarItems()
 
         let friendsTabBarItem = UITabBarItem()
         friendsTabBarItem.image = UIImage(systemName: "person.2")
@@ -67,6 +66,8 @@ class MainTabBarVC: UITabBarController {
 
         let controllers = [friendsVC, photosVC, groupsVC]
         self.viewControllers = controllers
+        
+        // setupTabBarItems()
         
     }
     

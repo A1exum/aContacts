@@ -7,6 +7,7 @@
 
 
 import Foundation
+import SwiftKeychainWrapper
 
 //Service -> business logic -> manage token
 final class Session {
@@ -15,11 +16,46 @@ final class Session {
     
     static let shared = Session() //Global memory + contant -> shared object
     
-    var token: String = ""
-    var userId: String = ""
-    var expiresIn: String = ""
+    var token: String {
+        get{
+            return KeychainWrapper.standard.string(forKey: "token") ?? ""
+        }
+        set{
+            KeychainWrapper.standard.set(newValue, forKey: "token")
+            
+        }
+    }
     
-    #warning("Отслеживал время токена")
+    var userId: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "userId")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userId")
+        }
+    }
     
-    #warning("Сохранение токена в Keychain а остальное в UserDefaults")
+    var expiresIn: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "expiresIn")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "expiresIn")
+        }
+    }
+
+    static var isValid: Bool {
+        
+        var expiresIn = UserDefaults.standard.integer(forKey: "expiresIn")
+        guard expiresIn > 0 else { return false }
+        //UTC
+        var tokenDate = Date(timeIntervalSinceNow: Double(expiresIn))
+        var currentDate = Date()
+        print("tokenDate",tokenDate)
+        print("currentDate", currentDate)
+        return (currentDate < tokenDate)
+    }
+    
+    
+
 }
