@@ -23,7 +23,8 @@ final class PhotosAPI {
 
         //URL
         urlComponents.queryItems = [
-            URLQueryItem(name: "user_id", value: Session.shared.userId),
+            URLQueryItem(name: "user_id", value: "646052700"),
+            //  URLQueryItem(name: "user_id", value: "\(Session.shared.userId)"),
             URLQueryItem(name: "count", value: "100"),
             URLQueryItem(name: "offset", value: "0"),
             URLQueryItem(name: "extended", value: "1"),

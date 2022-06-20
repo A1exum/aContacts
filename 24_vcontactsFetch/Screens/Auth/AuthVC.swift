@@ -22,6 +22,16 @@ class AuthVC: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        
+        if Session.isValid {
+            
+            let mainTabBarVC = MainTabBarVC()
+            navigationController?.pushViewController(mainTabBarVC, animated: true)
+            navigationController?.isNavigationBarHidden = true
+            
+            return
+        }
+        
         authorizeToVK()
         
         // Do any additional setup after loading the view.
@@ -82,8 +92,8 @@ extension AuthVC: WKNavigationDelegate {
         guard let token = params["access_token"], let userId = params["user_id"], let expiresIn = params["expires_in"] else { return }
         
         Session.shared.token = token
-        Session.shared.userId = userId
-        Session.shared.expiresIn = expiresIn
+        Session.shared.userId = Int(userId) ?? 0
+        Session.shared.expiresIn = Int(expiresIn) ?? 0
      
         
         let mainTabBarVC = storyboard?.instantiateViewController(withIdentifier: "MainTabBarVC") as! MainTabBarVC
