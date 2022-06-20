@@ -24,6 +24,10 @@
 		844871D8284CDEE8004FBD96 /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844871D7284CDEE8004FBD96 /* PhotosAPI.swift */; };
 		844C3BCB283B893D003A8CCF /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C3BCA283B893D003A8CCF /* PhotoCell.swift */; };
 		844C3BCF283B9E2D003A8CCF /* HeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C3BCE283B9E2D003A8CCF /* HeaderCollectionView.swift */; };
+		845E1A03286064B200381A28 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 845E1A02286064B200381A28 /* SDWebImage */; };
+		845E1A05286064B200381A28 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 845E1A04286064B200381A28 /* SDWebImageMapKit */; };
+		845E1A08286066E400381A28 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 845E1A07286066E400381A28 /* SwiftyJSON */; };
+		845E1A0B2860687900381A28 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 845E1A0A2860687900381A28 /* SwiftKeychainWrapper */; };
 		849F920C2835574000712CA1 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F920B2835574000712CA1 /* FriendCell.swift */; };
 		849F9210283656A800712CA1 /* UILabel+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F920F283656A800712CA1 /* UILabel+colors.swift */; };
 		849F921228365BBF00712CA1 /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F921128365BBF00712CA1 /* PhotosVC.swift */; };
@@ -35,8 +39,6 @@
 		84DE86C92848B9200038CB3A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE86C82848B9200038CB3A /* Session.swift */; };
 		84DE86CB2848B9C00038CB3A /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE86CA2848B9C00038CB3A /* FriendsAPI.swift */; };
 		84DE86CF2848BA360038CB3A /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE86CE2848BA360038CB3A /* FriendsDB.swift */; };
-		84DE86D22848BD7D0038CB3A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84DE86D12848BD7D0038CB3A /* SDWebImage */; };
-		84DE86D42848BD7D0038CB3A /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84DE86D32848BD7D0038CB3A /* SDWebImageMapKit */; };
 		84DE86D62848C1380038CB3A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE86D52848C1380038CB3A /* AuthVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,8 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84DE86D42848BD7D0038CB3A /* SDWebImageMapKit in Frameworks */,
-				84DE86D22848BD7D0038CB3A /* SDWebImage in Frameworks */,
+				845E1A03286064B200381A28 /* SDWebImage in Frameworks */,
+				845E1A05286064B200381A28 /* SDWebImageMapKit in Frameworks */,
+				845E1A0B2860687900381A28 /* SwiftKeychainWrapper in Frameworks */,
+				845E1A08286066E400381A28 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,8 +316,10 @@
 			);
 			name = 24_vcontactsFetch;
 			packageProductDependencies = (
-				84DE86D12848BD7D0038CB3A /* SDWebImage */,
-				84DE86D32848BD7D0038CB3A /* SDWebImageMapKit */,
+				845E1A02286064B200381A28 /* SDWebImage */,
+				845E1A04286064B200381A28 /* SDWebImageMapKit */,
+				845E1A07286066E400381A28 /* SwiftyJSON */,
+				845E1A0A2860687900381A28 /* SwiftKeychainWrapper */,
 			);
 			productName = 21_Table_Contacts;
 			productReference = 84017339283536720016428E /* 24_vcontactsFetch.app */;
@@ -388,7 +394,9 @@
 			);
 			mainGroup = 84017330283536720016428E;
 			packageReferences = (
-				84DE86D02848BD7D0038CB3A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				845E1A01286064B100381A28 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				845E1A06286066E400381A28 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				845E1A092860687900381A28 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 8401733A283536720016428E /* Products */;
 			projectDirPath = "";
@@ -514,7 +522,8 @@
 		84017361283536780016428E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = "$(inherited)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -575,7 +584,8 @@
 		84017362283536780016428E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = "$(inherited)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -630,6 +640,7 @@
 		84017364283536780016428E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -658,6 +669,7 @@
 		84017365283536780016428E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -726,7 +738,7 @@
 		8401736A283536780016428E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4R926QC5V9;
@@ -744,7 +756,7 @@
 		8401736B283536780016428E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4R926QC5V9;
@@ -801,26 +813,52 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84DE86D02848BD7D0038CB3A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		845E1A01286064B100381A28 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = exactVersion;
-				version = 5.12.5;
+				version = 5.11.1;
+			};
+		};
+		845E1A06286066E400381A28 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.1;
+			};
+		};
+		845E1A092860687900381A28 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84DE86D12848BD7D0038CB3A /* SDWebImage */ = {
+		845E1A02286064B200381A28 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84DE86D02848BD7D0038CB3A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 845E1A01286064B100381A28 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		84DE86D32848BD7D0038CB3A /* SDWebImageMapKit */ = {
+		845E1A04286064B200381A28 /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84DE86D02848BD7D0038CB3A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 845E1A01286064B100381A28 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		845E1A07286066E400381A28 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 845E1A06286066E400381A28 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		845E1A0A2860687900381A28 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 845E1A092860687900381A28 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
